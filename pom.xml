@@ -15,7 +15,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/rtx-inspire/sdsd</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v@{project.version}</tag>
   </scm>
 
   <build>
@@ -34,6 +34,7 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>3.0.1</version>
         <configuration>
+          <goals>pre-integration-test</goals>
           <username>rtx-inspire</username>
           <password>${env.RTX_PWD}</password>
         </configuration>
