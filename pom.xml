@@ -14,7 +14,9 @@
   </properties>
 
   <scm>
-    <developerConnection>scm:git:https://github.com/rtx-inspire/sdsd</developerConnection>
+    <connection>scm:git:https://github.com/rtx-inspire/sdsd.git</connection>
+    <developerConnection>scm:git:https://github.com/rtx-inspire/sdsd.git</developerConnection>
+    <url>https://github.com/rtx-inspire/sdsd</url>
     <tag>v@{project.version}</tag>
   </scm>
 
@@ -35,8 +37,11 @@
         <version>3.0.1</version>
         <configuration>
           <goals>pre-integration-test</goals>
+          <preparationGoals>package</preparationGoals>
           <username>rtx-inspire</username>
           <password>${env.RTX_PWD}</password>
+          <tagNameFormat>@{project.version}</tagNameFormat>
+          <remoteTagging>false</remoteTagging>
         </configuration>
       </plugin>
     </plugins>
