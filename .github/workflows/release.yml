@@ -22,8 +22,3 @@ jobs:
           release_name: Release ${{ github.event.client_payload.tag_name }}
           draft: false
           prerelease: false
-
-      - name: Publish to GitHub Packages
-        run: mvn -s $GITHUB_WORKSPACE/settings.xml deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
