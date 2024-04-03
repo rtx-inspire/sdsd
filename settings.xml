@@ -6,7 +6,7 @@
         <server>
             <id>mvn-repo</id>
             <username>rtx-inspire</username>
-            <password>${env.MY_PWD}</password>
+            <password>${env.RTX_PWD}</password>
         </server>
     </servers>
 </settings>
