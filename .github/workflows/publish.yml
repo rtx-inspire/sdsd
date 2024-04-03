@@ -25,10 +25,22 @@ jobs:
           distribution: 'adopt'
 
       - name: Maven Release x GitHub Packages
+        id: create_tag
         run: |
           git config --global user.name "rtx-inspire"
           git config --global user.email "inspiringfacts57@gmail.com"
           mvn release:prepare --batch-mode 
           mvn release:perform -s $GITHUB_WORKSPACE/settings.xml
+          
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Tag: $TAG"
+          echo "::set-output name=tag::$TAG"
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
+
+      - name: Trigger Release Workflow
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          event-type: trigger-release
+          client-payload: '{"tag_name": "${{ steps.create_tag.outputs.tag }}"}'
