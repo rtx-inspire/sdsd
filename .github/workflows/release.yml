@@ -2,7 +2,7 @@ name: Release on Tag
 
 on:
   workflow_run:
-    workflows: ["Publish"]
+    workflows: ["Maven Package"]
     types:
       - completed
 
