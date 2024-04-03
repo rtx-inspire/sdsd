@@ -36,12 +36,8 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>3.0.1</version>
         <configuration>
-          <goals>pre-integration-test</goals>
-          <preparationGoals>package</preparationGoals>
           <username>rtx-inspire</username>
           <password>${env.RTX_PWD}</password>
-          <tagNameFormat>@{project.version}</tagNameFormat>
-          <remoteTagging>false</remoteTagging>
         </configuration>
       </plugin>
     </plugins>
