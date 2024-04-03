@@ -1,9 +1,10 @@
 name: Release on Tag
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_run:
+    workflows: ["publish"]
+    types:
+      - completed
 
 jobs:
   release:
