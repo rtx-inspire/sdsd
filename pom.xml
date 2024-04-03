@@ -3,7 +3,7 @@
 
   <groupId>com.pratifolio</groupId>
   <artifactId>sdsd</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <packaging>jar</packaging>
 
   <name>sdsd</name>
@@ -15,7 +15,7 @@
 
   <scm>
     <developerConnection>scm:git:https://github.com/rtx-inspire/sdsd</developerConnection>
-    <tag>v@{project.version}</tag>
+    <tag>sdsd-1.1</tag>
   </scm>
 
   <build>
